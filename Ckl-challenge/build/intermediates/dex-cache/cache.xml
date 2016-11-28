@@ -3,6 +3,114 @@
 
     <item
         is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_2ed6103f53d548d23ac279e96fef3d45f590bf8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_1e7cacd24f518e6657793526ca90c3b667659d5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.getkeepsafe.relinker/relinker/1.2.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.getkeepsafe.relinker-relinker-1.2.2_12b1dd6d7f574cf7c828efa58cbba13c2cdd2028/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c8dee6cda9756bb13d015c37e7a0581b6d9ff41e">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_31ba74392913cbed51bb9524509ddc75157b2c73/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_4c762bd837c91e6ee1ea8f53c8206c0c147dc9d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/2.0.0-beta2/880d9e0997b2d1bfc98e0d121ced33ee5d04aac4/retrofit-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.0-beta2_b48bd090fa161b5f5ef19f337cb48665211a83bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_719fd3f265c96d4506f25240d17b4f1155ee88b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_ed5587ae1e21cab4d542674aae7e54dcb06af7c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.googlecode.java-diff-utils/diffutils/1.3.0/7e060dd5b19431e6d198e91ff670644372f60fbd/diffutils-1.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e060dd5b19431e6d198e91ff670644372f60fbd">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/diffutils-1.3.0_314ae454c296e0577cb84896c5f5df644a55c231/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/io.realm/realm-android-library/2.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d16c820d6943f6bbfe74699ca2ce2ad4dd44829e">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.realm-realm-android-library-2.2.1_ff583691f0b2f3ad404cc1c57903c0952665d79a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations/2.2.1/3095c5145d7966e555c113c6a3fc33a107badc80/realm-annotations-2.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3095c5145d7966e555c113c6a3fc33a107badc80">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/realm-annotations-2.2.1_49025d3ba73b35433c8af97c4913fcc01d83eecf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/converter-gson/2.0.0-beta2/392c3d09e0f5e7087544093cc0cb23bb9c7af5fa/converter-gson-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta2_42ee76f57083cd7a705327b22b8c5f5a24504879/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
@@ -30,42 +138,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_ed5587ae1e21cab4d542674aae7e54dcb06af7c5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_2ed6103f53d548d23ac279e96fef3d45f590bf8f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_99f2fc4708f7a51233e22f42b2065cbeda7b079e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_f4aa172643fda91a7f64e1d1fbb6eea3adbe2765/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -75,30 +147,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_956b6e1d6e1668ad9b3ecad32b25732c3cdad22d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c50420b28e15d15ac5e56d1fbf8299a20aaf8bd2">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_31ba74392913cbed51bb9524509ddc75157b2c73/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_795b8a14cdc318bd8fe81441c693fc5834d628d1/classes.dex" />
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_14e84e6cb05c8687b75557b39bf678de3bddff28/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,12 +183,102 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_719fd3f265c96d4506f25240d17b4f1155ee88b6/classes.dex" />
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_31f1ba5165cdc8e438629463e406a9b23671a00a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-2.5.0_044393a4ec9105563ce7196acfd9248bc35931ec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.tonicartos/superslim/0.4.13/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8adfd82229a5f0a129469305587557199017219e">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.tonicartos-superslim-0.4.13_e4d94785cd84efd9b0452deb0fab8ba3f1c2811b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4ab8678882571a0a6f19c47a826ecbce5b4f42b">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.1.0_d76a1097c04a34c86684b522ef5133cf7c8e38be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.3.1_05140ebba9c41d15506c4c26057fb0e5683afadd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_99f2fc4708f7a51233e22f42b2065cbeda7b079e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.1.0/d6854f42bfb4098d3d2358d93201307b9f1cc95d/butterknife-annotations-8.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d6854f42bfb4098d3d2358d93201307b9f1cc95d">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.1.0_8461dfec2a53ff0083ae997a52c2ea1801bf0bbd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.github.thorbenprimke/realm-recyclerview/0.9.25/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b6f8e49f2ebcea1dc839e5ac823d2b61e58d6de7">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.thorbenprimke-realm-recyclerview-0.9.25_6a50b17ba5f81273369ce945ee2b57e404dbcef5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_f4aa172643fda91a7f64e1d1fbb6eea3adbe2765/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_956b6e1d6e1668ad9b3ecad32b25732c3cdad22d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_795b8a14cdc318bd8fe81441c693fc5834d628d1/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -142,7 +286,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a6b5d08a777fe0153d2435e54afdad86bf0496fa">
+        sha1="582185ea35ae96acad7d91abe3f6c90585b2b85b">
         <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1a1ed0613ada3d94d8418c81af53a235cd3ccdd5/classes.dex" />
     </item>
     <item
