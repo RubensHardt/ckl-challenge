@@ -54,18 +54,17 @@ public class ArticleListFragment extends Fragment {
     private Realm realm;
     RealmResults<Article> mArticles;
     ArticleListAdapter mArticleListAdapter;
-
     private OnArticleSelected onArticleSelected;
 
     // bind the the RealmRecyclerView with its layout component using ButterKnife
-    @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;;
+    @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_article_list, container, false);
 
-        //initialize the onArticleSelected
+        // initialize onArticleSelected
         onArticleSelected = (OnArticleSelected) getContext();
 
         //bind the views
@@ -101,6 +100,19 @@ public class ArticleListFragment extends Fragment {
         }
     }
 
+    // function to mark an article as read or unread
+    public void onCheckboxSelected(boolean checked, long articleId, int position) {
+
+        //begin a realm transaction
+        realm.beginTransaction();               //query to get the selected article
+        Article ArticleItem = realm.where(Article.class).equalTo("id", articleId).findFirst();
+        ArticleItem.setRead(checked);           //set the passed boolean value
+        realm.commitTransaction();
+
+        //notify the adapter to update the view
+        mArticleListAdapter.notifyItemChanged(position);
+    }
+
     public class ArticleListAdapter extends RealmBasedRecyclerViewAdapter<Article, ArticleListAdapter.ViewHolder> {
 
         public class ViewHolder extends RealmViewHolder {
@@ -118,6 +130,7 @@ public class ArticleListFragment extends Fragment {
                 container.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        onCheckboxSelected(true,realmResults.get(getAdapterPosition()).getId(),getAdapterPosition());
                         onDataSelected(container,getAdapterPosition());
                     }
                 });
@@ -156,6 +169,21 @@ public class ArticleListFragment extends Fragment {
             viewHolder.imgImageView.setImageURI(mUri);
             viewHolder.checkBox.setChecked(mArticle.getRead());
 
+            // setOnClickListener to the checkbox
+            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    boolean checked = ((CheckBox) v).isChecked();
+
+                    if (checked){       //if the user check it, mark as read
+                        onCheckboxSelected(true,mArticle.getId(), position);
+                        Toast.makeText(v.getContext(), "Marked as read", Toast.LENGTH_LONG).show();
+                    }
+                    else {              //if the user uncheck it, mark as unread
+                        onCheckboxSelected(false,mArticle.getId(), position);
+                        Toast.makeText(v.getContext(), "Marked as unread", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
 
         // onDataSelected calls the interface method onArticleSelected
@@ -175,7 +203,6 @@ public class ArticleListFragment extends Fragment {
                     mLabelsString,selectedItem.getImage());
         }
     }
-
     // OnArticleSelected is an interface that will be implemented by the main activity
     public interface OnArticleSelected {
         // onArticleSelected is a method that, when implemented, will pass the select article
