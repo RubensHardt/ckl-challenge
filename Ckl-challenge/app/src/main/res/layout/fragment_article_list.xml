@@ -6,5 +6,30 @@
     android:layout_height="match_parent"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu"
+        android:orientation="horizontal"
+        >
 
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@+id/menu"
+        >
+
+        <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView
+            android:id="@+id/realm_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rrvLayoutType="LinearLayout"
+            app:rrvSwipeToDelete="true"
+            app:rrvEmptyLayoutId="@layout/article_list_empty_view"
+            />
+
+    </FrameLayout>
 </RelativeLayout>

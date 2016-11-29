@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+    <RelativeLayout
+        android:background="#fafafa"
+        android:layout_margin="5dp"
+        android:minHeight="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/news_default"
+            android:id="@+id/image_default"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"/>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:text="Read"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/image_default"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="visible"
+            android:onClick="onCheckboxClicked"
+            />
+
+        <TextView
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/image_default"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:textSize="14sp"
+            android:id="@+id/article_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/image_default"
+            android:layout_below="@+id/article_title"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:textSize="10sp"
+            android:id="@+id/article_authors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/image_default"
+            android:layout_below="@+id/article_authors"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:textSize="10sp"
+            android:id="@+id/article_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</FrameLayout>
