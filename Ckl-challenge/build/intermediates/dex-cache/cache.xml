@@ -34,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c8dee6cda9756bb13d015c37e7a0581b6d9ff41e">
+        sha1="6b3a69e09efef2632a19ae826a5ce884bd2766bf">
         <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_31ba74392913cbed51bb9524509ddc75157b2c73/classes.dex" />
     </item>
     <item
@@ -286,7 +286,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="582185ea35ae96acad7d91abe3f6c90585b2b85b">
+        sha1="26497158535741307a99ae2f6f1612d4e9431e3c">
         <dex dex="/Users/rubenshardtjunior/Desktop/ckl-challenge/Ckl-challenge/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1a1ed0613ada3d94d8418c81af53a235cd3ccdd5/classes.dex" />
     </item>
     <item

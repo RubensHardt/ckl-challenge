@@ -36,12 +36,14 @@ import retrofit.Callback;
 import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
+import rubenshardt.ckl_challenge.retrofitAPI.APIArticle;
+import rubenshardt.ckl_challenge.retrofitAPI.RetrofitArrayAPI;
 
 /**
  * Created by rubenshardtjunior on 11/28/16.
  */
 
-public class ArticleListFragment extends Fragment implements AdapterView.OnItemSelectedListener{
+public class ArticleListFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     public static ArticleListFragment newInstance() {
         return new ArticleListFragment();
@@ -51,15 +53,19 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
         // Required empty public constructor
     }
 
+    //Root URL of our web service
+    public static final String ROOT_URL = "https://www.ckl.io/";
+
     private Realm realm;
     RealmResults<Article> mArticles;
     ArticleListAdapter mArticleListAdapter;
     Activity activity = getActivity();
+    Button refreshButton;
     private OnArticleSelected onArticleSelected;
 
     // bind the Spinner with its layout component using ButterKnife
     @BindView(R.id.articles_spinner) Spinner spinner;
-    // bind the the RealmRecyclerView with its layout component using ButterKnife
+    // bind the RealmRecyclerView with its layout component using ButterKnife
     @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;
 
     @Nullable
@@ -96,9 +102,16 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
         //realm query to get the articles ordered by date
         mArticles = realm.where(Article.class).findAllSorted("date", Sort.DESCENDING);
 
+        //if the list is empty (fist time the app runs), get the articles from the repository
+        if(mArticles.isEmpty()) {
+            getRetrofitArray();
+        }
         //create and set the realmRecyclerView adapter
         mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
         realmRecyclerView.setAdapter(mArticleListAdapter);
+
+        refreshButton = (Button) view.findViewById(R.id.button_refresh_list);
+        refreshButton.setOnClickListener(this);
 
         return view;
     }
@@ -112,6 +125,15 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
             realm.close();
             realm = null;
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        realm.beginTransaction();
+        realm.deleteAll();
+        realm.commitTransaction();
+
+        getRetrofitArray();
     }
 
     // override the onItemSelected method of the spinner adapter to treat the sort selection
@@ -154,6 +176,88 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
 
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+    private void addArticleItem(List<APIArticle> ArticlesData) {
+
+        // for each article in ArticlesData
+        for (int i = 0; i < ArticlesData.size(); i++) {
+
+            Uri uriImage;
+
+            //if the image is null, set the image as the default image
+            if (ArticlesData.get(i).getImage().equals("null") || ArticlesData.get(i).getImage().isEmpty()) {
+                uriImage = Uri.parse("android.resource://rubenshardt.cheesecakechallenge/drawable/news_default");
+            } else {
+                //else, set the related image from de drawables source
+                uriImage = Uri.parse("android.resource://rubenshardt.cheesecakechallenge/drawable/" + ArticlesData.get(i).getImage());
+            }
+            String stringUriImage = uriImage.toString();
+
+            realm.beginTransaction();
+
+            // create a new realmObject Article setting its primary key "id"
+            Article ArticleItem = realm.createObject(Article.class, System.currentTimeMillis());
+            //copy all article data to respective realm object
+            ArticleItem.setTitle(ArticlesData.get(i).getTitle());
+            ArticleItem.setWebsite(ArticlesData.get(i).getWebsite());
+            ArticleItem.setAuthors(ArticlesData.get(i).getAuthors());
+            ArticleItem.setDate(ArticlesData.get(i).getDate());
+            ArticleItem.setContent(ArticlesData.get(i).getContent());
+            ArticleItem.setImage(stringUriImage);
+            ArticleItem.setRead(false);
+
+            // for each Tag in the article
+            for (int j = 0; j < ArticlesData.get(i).getTags().size(); j++) {
+
+                //create a realmObject tag, copy its data and add the realmObject Tag
+                // to the article realmList<Tag> Tags
+                Tag tagItem = realm.createObject(Tag.class);
+                tagItem.setId(ArticlesData.get(i).getTags().get(j).getId());
+                tagItem.setLabel(ArticlesData.get(i).getTags().get(j).getLabel());
+                ArticleItem.getTags().add(tagItem);
+            }
+            //commit the transaction
+            realm.commitTransaction();
+
+        }
+    }
+
+    void getRetrofitArray() {
+
+        //set up the retrofit API
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ROOT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetrofitArrayAPI service = retrofit.create(RetrofitArrayAPI.class);
+
+        //make a call to get the articles data from the JSON repository
+        Call<List<APIArticle>> call = service.getArticleDetails();
+
+        call.enqueue(new Callback<List<APIArticle>>() {
+            //call response
+            @Override
+            public void onResponse(Response<List<APIArticle>> response, Retrofit retrofit) {
+
+                try {
+                    // get the response and add the articles to realm database
+                    List<APIArticle> ArticlesData = response.body();
+                    addArticleItem(ArticlesData);
+
+                } catch (Exception e) {
+                    Log.d("onResponse", "There is an error");
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d("onFailure", t.toString());
+            }
+        });
     }
 
     // function to mark an article as read or unread
