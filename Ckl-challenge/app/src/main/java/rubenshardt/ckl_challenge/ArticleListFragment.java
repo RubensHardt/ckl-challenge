@@ -43,7 +43,7 @@ import rubenshardt.ckl_challenge.retrofitAPI.RetrofitArrayAPI;
  * Created by rubenshardtjunior on 11/28/16.
  */
 
-public class ArticleListFragment extends Fragment implements AdapterView.OnItemSelectedListener{
+public class ArticleListFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     public static ArticleListFragment newInstance() {
         return new ArticleListFragment();
@@ -60,6 +60,7 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
     RealmResults<Article> mArticles;
     ArticleListAdapter mArticleListAdapter;
     Activity activity = getActivity();
+    Button refreshButton;
     private OnArticleSelected onArticleSelected;
 
     // bind the Spinner with its layout component using ButterKnife
@@ -109,6 +110,9 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
         mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
         realmRecyclerView.setAdapter(mArticleListAdapter);
 
+        refreshButton = (Button) view.findViewById(R.id.button_refresh_list);
+        refreshButton.setOnClickListener(this);
+
         return view;
     }
 
@@ -121,6 +125,15 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemS
             realm.close();
             realm = null;
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        realm.beginTransaction();
+        realm.deleteAll();
+        realm.commitTransaction();
+
+        getRetrofitArray();
     }
 
     // override the onItemSelected method of the spinner adapter to treat the sort selection

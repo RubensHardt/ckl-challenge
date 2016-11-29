@@ -19,6 +19,13 @@
             android:layout_weight="1"
             android:textSize="18sp"/>
 
+        <Button
+            android:id="@+id/button_refresh_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Refresh" />
+
     </LinearLayout>
 
     <FrameLayout
