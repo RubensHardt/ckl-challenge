@@ -1,17 +1,26 @@
 package rubenshardt.ckl_challenge;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +31,11 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 import io.realm.RealmViewHolder;
 import io.realm.Sort;
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 /**
  * Created by rubenshardtjunior on 11/28/16.
@@ -41,13 +55,18 @@ public class ArticleListFragment extends Fragment {
     RealmResults<Article> mArticles;
     ArticleListAdapter mArticleListAdapter;
 
+    private OnArticleSelected onArticleSelected;
+
     // bind the the RealmRecyclerView with its layout component using ButterKnife
-    @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;
+    @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_article_list, container, false);
+
+        //initialize the onArticleSelected
+        onArticleSelected = (OnArticleSelected) getContext();
 
         //bind the views
         ButterKnife.bind(this, view);
@@ -84,8 +103,6 @@ public class ArticleListFragment extends Fragment {
 
     public class ArticleListAdapter extends RealmBasedRecyclerViewAdapter<Article, ArticleListAdapter.ViewHolder> {
 
-        private Context context;
-
         public class ViewHolder extends RealmViewHolder {
 
             // bind each layout component with its layout component using ButterKnife
@@ -98,8 +115,14 @@ public class ArticleListFragment extends Fragment {
             public ViewHolder(final FrameLayout container) {
                 super(container);
 
-                ButterKnife.bind(this, container);
+                container.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onDataSelected(container,getAdapterPosition());
+                    }
+                });
 
+                ButterKnife.bind(this, container);
             }
         }
 
@@ -118,7 +141,6 @@ public class ArticleListFragment extends Fragment {
             return vh;
         }
 
-
         // bind realm article data with its respective view
         @Override
         public void onBindRealmViewHolder(ArticleListAdapter.ViewHolder viewHolder, final int position) {
@@ -135,5 +157,29 @@ public class ArticleListFragment extends Fragment {
             viewHolder.checkBox.setChecked(mArticle.getRead());
 
         }
+
+        // onDataSelected calls the interface method onArticleSelected
+        public void onDataSelected(FrameLayout container, int position) {
+
+            //get the selected article
+            final Article selectedItem = realmResults.get(position);
+
+            //concatenate all the labels from the article tags
+            String mLabelsString = "";
+            for (int i = 0; i < selectedItem.getTags().size(); i++) {
+
+                mLabelsString = mLabelsString + selectedItem.getTags().get(i).getLabel();
+            }
+            onArticleSelected.onArticleSelected(selectedItem.getTitle(), selectedItem.getWebsite(),
+                    selectedItem.getAuthors(), selectedItem.getDate(), selectedItem.getContent(),
+                    mLabelsString,selectedItem.getImage());
+        }
+    }
+
+    // OnArticleSelected is an interface that will be implemented by the main activity
+    public interface OnArticleSelected {
+        // onArticleSelected is a method that, when implemented, will pass the select article
+        // information to main activity, to call the article details fragment
+        void onArticleSelected(String mTitle, String mWebsite, String mAuthors, String mDate, String mContent, String mLabel, String mImageStrUri);
     }
 }
