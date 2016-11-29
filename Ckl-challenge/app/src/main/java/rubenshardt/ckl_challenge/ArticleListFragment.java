@@ -41,7 +41,7 @@ import retrofit.Retrofit;
  * Created by rubenshardtjunior on 11/28/16.
  */
 
-public class ArticleListFragment extends Fragment {
+public class ArticleListFragment extends Fragment implements AdapterView.OnItemSelectedListener{
 
     public static ArticleListFragment newInstance() {
         return new ArticleListFragment();
@@ -54,8 +54,11 @@ public class ArticleListFragment extends Fragment {
     private Realm realm;
     RealmResults<Article> mArticles;
     ArticleListAdapter mArticleListAdapter;
+    Activity activity = getActivity();
     private OnArticleSelected onArticleSelected;
 
+    // bind the Spinner with its layout component using ButterKnife
+    @BindView(R.id.articles_spinner) Spinner spinner;
     // bind the the RealmRecyclerView with its layout component using ButterKnife
     @BindView(R.id.realm_recycler_view) RealmRecyclerView realmRecyclerView;
 
@@ -64,11 +67,22 @@ public class ArticleListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_article_list, container, false);
 
+        activity = getActivity();
         // initialize onArticleSelected
         onArticleSelected = (OnArticleSelected) getContext();
 
         //bind the views
         ButterKnife.bind(this, view);
+
+        // Spinner click listener
+        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> SpinnerAdapter = ArrayAdapter.createFromResource(activity,
+                R.array.options_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        SpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(SpinnerAdapter);
 
         // Sets up a realm instance
         Realm.init(getContext());
@@ -83,7 +97,7 @@ public class ArticleListFragment extends Fragment {
         mArticles = realm.where(Article.class).findAllSorted("date", Sort.DESCENDING);
 
         //create and set the realmRecyclerView adapter
-        mArticleListAdapter = new ArticleListAdapter(getActivity(), mArticles, true, true);
+        mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
         realmRecyclerView.setAdapter(mArticleListAdapter);
 
         return view;
@@ -98,6 +112,48 @@ public class ArticleListFragment extends Fragment {
             realm.close();
             realm = null;
         }
+    }
+
+    // override the onItemSelected method of the spinner adapter to treat the sort selection
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        // sort by date
+        if(item.equals("Date")){
+            Toast.makeText(parent.getContext(), "Selected: Date", Toast.LENGTH_LONG).show();
+            //realm query to get the articles ordered by date
+            mArticles = realm.where(Article.class).findAllSorted("date", Sort.DESCENDING);
+            // recreate and set the realmRecyclerView adapter
+            mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
+            realmRecyclerView.setAdapter(mArticleListAdapter);
+        }
+        // sort by title
+        if(item.equals("Title")){
+            Toast.makeText(parent.getContext(), "Selected: Title", Toast.LENGTH_LONG).show();
+            mArticles = realm.where(Article.class).findAllSorted("title");
+            mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
+            realmRecyclerView.setAdapter(mArticleListAdapter);
+        }
+        // sort by website
+        if(item.equals("Website")){
+            Toast.makeText(parent.getContext(), "Selected: Website", Toast.LENGTH_LONG).show();
+            mArticles = realm.where(Article.class).findAllSorted("website");
+            mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
+            realmRecyclerView.setAdapter(mArticleListAdapter);
+        }
+        // sort by authors
+        if (item.equals("Authors")){
+            Toast.makeText(parent.getContext(), "Selected: Authors", Toast.LENGTH_LONG).show();
+            mArticles = realm.where(Article.class).findAllSorted("authors");
+            mArticleListAdapter = new ArticleListAdapter(activity, mArticles, true, true);
+            realmRecyclerView.setAdapter(mArticleListAdapter);
+        }
+    }
+
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 
     // function to mark an article as read or unread

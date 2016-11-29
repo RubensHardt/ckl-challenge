@@ -10,8 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/menu"
-        android:orientation="horizontal"
         >
+
+        <Spinner
+            android:id="@+id/articles_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"/>
 
     </LinearLayout>
 
